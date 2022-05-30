@@ -1,10 +1,12 @@
-const text = document.querySelector(".text")
-const input = document.querySelector(".input")
-const typistWrapper = document.querySelector(".typist-wrapper")
+// const input = document.querySelector(".input")
+// const typistWrapper = document.querySelector(".typist-wrapper")
 
-const strChars = []
 
-function fillText(str){
+export function fillStr(str, mode, count){
+    
+}
+
+export function fillText(strChars, text, str){
     str.split("").map(letter => {
         const span = document.createElement("span")
         span.innerText = letter
@@ -13,6 +15,3 @@ function fillText(str){
     })
 }
 
-module.exports = {
-    fillText: fillText
-};
