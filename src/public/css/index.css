@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
 
 *{
-    /* margin: 0;
-    padding: 0; */
     box-sizing: border-box;
 
 }
@@ -21,25 +19,30 @@ html {
     height: 32px;
     width: 100%;
     font-size: 1.5em;
-    color: rgb(0, 0, 0, 0.75)
+    color: rgb(0, 0, 0, 0.4)
 }
 
 .text {
     color: rgb(0, 0, 0, 0.5);
-    opacity: ;
-    height: 30vh;
+    height: 12vh;
     border: 2px solid rgb(47, 47, 47);
     border-radius: 25px;
     font-size: 1.5em;
-
+    padding: 10px;
+    margin-bottom: 25px;
 }
 
 .input {
-    height: 7.5vh;
+    height: 9.2vh;
     background-color:rgb(41, 93, 123);
+    color: rgb(0, 0, 0, 0.75);
     resize: none;
     border: none;
-    font-size: 2em;
+    font-size: 1.3em;
+    padding: 2em;
+    padding: 15px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
 }
 
 .text, .stats {
@@ -54,12 +57,11 @@ html {
 
 .text, .input{
     width: 100%;
-    padding: 70px;
     outline: none;
-    padding: 2em;
     display: block;
     overflow-y: scroll;
-    /* overflow: hidden; */
+    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .typist-wrapper {
@@ -75,6 +77,12 @@ html {
     text-decoration: underline;
     text-decoration-color: red;
     color: rgb(250, 132, 132);
+}
+
+/* nav-bar */
+
+.nav-bar {
+    margin-bottom: 27vh;
 }
 
 .nav-bar li {
