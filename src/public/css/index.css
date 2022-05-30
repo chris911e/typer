@@ -25,7 +25,7 @@ html {
 .text {
     color: rgb(0, 0, 0, 0.5);
     height: 12vh;
-    border: 2px solid rgb(47, 47, 47);
+    border: 2px solid rgb(47, 47, 47, 0.6);
     border-radius: 25px;
     font-size: 1.5em;
     padding: 10px;
@@ -76,12 +76,12 @@ html {
 }
 
 .correct{
-    color: black;
+    color: rgb(0, 0, 0, 0.9);
 }
 .wrong{
     text-decoration: underline;
-    text-decoration-color: red;
-    color: rgb(250, 132, 132);
+    text-decoration-color: rgba(188, 2, 2, 0.5);
+    color: rgb(250, 132, 132, 0.5);
 }
 
 /* nav-bar */
