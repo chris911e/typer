@@ -1,7 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
 
+*{
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+
+}
 
 html {
+    background-color:rgb(41, 93, 123);
     font-family: 'Heebo', sans-serif;
-    background-color: dimgrey;
+    font-weight: bold;
+}
+
+/* typer */
+
+.stats {
+    /* visibility: hidden; */
+    float: left;
+    height: 32px;
+    width: 100%;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0, 0.75)
+}
+
+.text {
+    color: rgb(0, 0, 0, 0.5);
+    opacity: ;
+    height: 30vh;
+    border: 2px solid rgb(47, 47, 47);
+    border-radius: 25px;
+    font-size: 1.5em;
+
+}
+
+.input {
+    height: 7.5vh;
+    background-color:rgb(41, 93, 123);
+    resize: none;
+    border: none;
+    font-size: 2em;
+}
+
+.text, .stats {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.text, .input{
+    width: 100%;
+    padding: 70px;
+    outline: none;
+    padding: 2em;
+    display: block;
+    overflow-y: scroll;
+    /* overflow: hidden; */
+}
+
+.typist-wrapper {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+}
+
+.correct{
+    color: black;
+}
+.wrong{
+    text-decoration: underline;
+    text-decoration-color: red;
+    color: rgb(250, 132, 132);
+}
+
+.nav-bar li {
+    float: right;
+    color: rgb(0, 0, 0, 0.5);
+    font-size: 1.5em;
+    display: inline;
+    margin: 1em;
+}
+
+.nav-bar li:first-child {
+    float: left;
+    margin: 0em;
+}
+
+#logo {
+    width: 151px;
+    height: 60px;
 }
