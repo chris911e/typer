@@ -3,17 +3,21 @@ import * as fs from "fs"
 // const typistWrapper = document.querySelector(".typist-wrapper")
 
 
-export function fillStr(str, mode, count){
-    fs.readFile('wordlists.json', 'utf-8', (err, myData) => {
-        if (err) {
-            console.log(err)
-        }
-    })
+export function fillStr(mode, count){
+    const data = fs.readFileSync('wordlists.json', 'utf-8')
+    const parsed_data = JSON.parse(data)
+
+    var prev_word = ""
 
     for(let i = 0; i < count; i++){
-        str += myData[`${mode}`]["words"][Math.floor(Math.random() * myData[`${mode}`]["words"].length)]
+        var word = parsed_data[mode][Math.floor(Math.random() * parsed_data[mode].length)]
+        if(word !== prev_word){
+            str += `${word} `
+            prev_word = word
+        } else {
+            i--
+        }
     }
-    
 }
 
 export function fillText(strChars, text, str){
