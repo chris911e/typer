@@ -1,4 +1,4 @@
-import * as fs from "fs"
+import * as fs from 'fs'
 // const input = document.querySelector(".input")
 // const typistWrapper = document.querySelector(".typist-wrapper")
 
@@ -35,6 +35,14 @@ export function resetStrChars(){
         strChar.clasList.remove("wrong")
     })
     strChars = []
-    renderText("")
+    renderText(str)
+}
+
+export function type(){
+    input.addEventListener("keyup", () => {
+        if(!timer){
+            timer = setTimeout()
+        }
+    })
 }
 
