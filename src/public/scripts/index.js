@@ -1,4 +1,4 @@
-import { fillText, fillStr } from '../modules/typer.js'
+import * as typer from '../modules/typer.js'
 
 const text = document.querySelector(".text")
 
