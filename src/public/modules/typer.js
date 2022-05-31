@@ -20,12 +20,21 @@ export function fillStr(mode, count){
     }
 }
 
-export function fillText(strChars, text, str){
+export function renderText(str){
     str.split("").map(letter => {
         const span = document.createElement("span")
         span.innerText = letter
         text.appendChild(span)
         strChars.push(span)
     })
+}
+
+export function resetStrChars(){
+    strChars.map(strChar => {
+        strChar.classList.remove("correct")
+        strChar.clasList.remove("wrong")
+    })
+    strChars = []
+    renderText("")
 }
 
