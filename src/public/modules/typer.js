@@ -1,7 +1,6 @@
-import * as fs from 'fs'
+import * as fs from '../../../node_modules/fs'
 // const input = document.querySelector(".input")
 // const typistWrapper = document.querySelector(".typist-wrapper")
-
 
 export function fillStr(mode, count){
     const data = fs.readFileSync('wordlists.json', 'utf-8')
