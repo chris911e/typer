@@ -1,4 +1,4 @@
-import * as fs from '../../../node_modules/fs'
+// import * as fs from 'fs'
 // const input = document.querySelector(".input")
 // const typistWrapper = document.querySelector(".typist-wrapper")
 
