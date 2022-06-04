@@ -1,26 +1,15 @@
 import * as typer from '../modules/typer.js'
 
-const text = document.querySelector(".text")
-const input = document.querySelector(".input")
-const typistWrapper = document.querySelector(".typist-wrapper")
-
-const pop_up = document.querySelector(".pop-up")
-const html = document.querySelector("html")
-
-var str = "";
-var strChars = []
-
-function options(){
-    pop_up.style.visibility = "visible"
-    html.style.backgroundColor = "rgb(7, 41, 60)"
-    input.style.backgroundColor = "rgb(7, 41, 60)"
-
+function options() {
+    typer.pop_up.style.visibility = "visible"
+    typer.html.style.backgroundColor = "rgb(10, 50, 73)"
+    typer.input.style.backgroundColor = "rgb(10, 50, 73)"
 }
 
-function xfunc(){
-    pop_up.style.visibility = "hidden"
-    html.style.backgroundColor = "rgb(41, 93, 123)"
-    input.style.backgroundColor = "rgb(41, 93, 123)"
+function xfunc() {
+    typer.pop_up.style.visibility = "hidden"
+    typer.html.style.backgroundColor = "rgb(41, 93, 123)"
+    typer.input.style.backgroundColor = "rgb(41, 93, 123)"
 }
 
 document.querySelector('.x-button').addEventListener('click', xfunc)
