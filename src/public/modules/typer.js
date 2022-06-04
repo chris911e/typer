@@ -8,6 +8,12 @@ export const typistWrapper = document.querySelector(".typist-wrapper")
 export const pop_up = document.querySelector(".pop-up")
 export const html = document.getElementsByTagName("html")[0]
 
+export const option = document.querySelector(".option")
+export const option_button = document.querySelector('.option-button')
+export const option_input = document.querySelector(".option-input")
+export const x_button = document.querySelector('.x-button')
+export const type_button = document.querySelector(".type-button")
+
 export var str = "";
 export var strChars = []
 
