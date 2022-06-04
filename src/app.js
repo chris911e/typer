@@ -1,4 +1,4 @@
-import * as dotenv from "dotenv/config"
+import dotenv from 'dotenv/config'
 
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
