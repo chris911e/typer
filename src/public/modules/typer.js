@@ -1,23 +1,30 @@
-// import * as fs from 'fs'
-// const input = document.querySelector(".input")
-// const typistWrapper = document.querySelector(".typist-wrapper")
+import { words } from './words.js'
+
+export const text = document.querySelector(".text")
+export const input = document.querySelector(".input")
+export const menuWrapper = document.querySelector(".menu-wrapper")
+export const typistWrapper = document.querySelector(".typist-wrapper")
+
+export const pop_up = document.querySelector(".pop-up")
+export const html = document.getElementsByTagName("html")[0]
+
+export var str = "";
+export var strChars = []
+
 
 export function fillStr(mode, count){
-    const data = fs.readFileSync('wordlists.json', 'utf-8')
-    const parsed_data = JSON.parse(data)
-
-    var prev_word = ""
-
+    var prev = ""
     for(let i = 0; i < count; i++){
-        var word = parsed_data[mode][Math.floor(Math.random() * parsed_data[mode].length)]
-        if(word !== prev_word){
+        var word = words[mode][Math.floor(Math.random() * words[mode].length)]
+        if(word !== prev){
             str += `${word} `
-            prev_word = word
+            prev = word
         } else {
             i--
         }
     }
 }
+
 
 export function renderText(str){
     str.split("").map(letter => {
