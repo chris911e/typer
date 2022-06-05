@@ -14,6 +14,8 @@ export const option_input = document.querySelector(".option-input")
 export const x_button = document.querySelector('.x-button')
 export const type_button = document.querySelector(".type-button")
 
+export const option_suffix = document.querySelector(".option-suffix")
+
 export var str = "";
 export var strChars = []
 
