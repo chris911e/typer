@@ -16,7 +16,6 @@ export const type_button = document.querySelector(".type-button")
 
 export const option_suffix = document.querySelector(".option-suffix")
 export const mode_option = document.querySelector(".mode-option")
-
 export var str = ""
 export var strChars = []
 
