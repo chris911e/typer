@@ -1,5 +1,7 @@
 import * as typer from '../modules/typer.js'
 
+var difficulty, amount
+
 function options() {
     typer.pop_up.style.visibility = "visible"
     typer.option.value = "nothing"
@@ -21,8 +23,8 @@ function xfunc() {
 }
 
 function type() {
-    var difficulty = typer.mode_option.value
-    var amount = parseInt(typer.option_input.value)
+    difficulty = typer.mode_option.value
+    amount = parseInt(typer.option_input.value)
     switch(typer.option.value){
         case "time":
             typer.fillStr(difficulty, amount * 5)
@@ -67,7 +69,15 @@ typer.option.addEventListener('change', (event) => {
         typer.mode_option.style.visibility = "hidden"
     }
 })
+
 typer.type_button.addEventListener('click', type)
+
+window.addEventListener('load', (event) => {
+    typer.option.value = "words"
+    typer.mode_option.value = "normal"
+    typer.option_input.value = 69
+    type()
+})
 
 typer.option_button.addEventListener('click', options)
 typer.x_button.addEventListener('click', xfunc)
