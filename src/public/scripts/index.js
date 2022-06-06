@@ -21,7 +21,25 @@ function xfunc() {
 }
 
 function type() {
-    
+    var difficulty = typer.mode_option.value
+    var amount = parseInt(typer.option_input.value)
+    switch(typer.option.value){
+        case "time":
+            typer.fillStr(difficulty, amount * 5)
+            typer.renderText(typer.str)
+            break;
+        case "words":
+            typer.fillStr(difficulty, amount)
+            typer.renderText(typer.str)
+            break;
+    }
+    typer.pop_up.style.visibility = "hidden"
+    typer.option_input.style.visibility = "hidden"
+    typer.type_button.style.visibility = "hidden"
+    typer.option_suffix.style.visibility = "hidden"
+    typer.mode_option.style.visibility = "hidden"
+    typer.html.style.backgroundColor = "rgb(41, 93, 123)"
+    typer.input.style.backgroundColor = "rgb(41, 93, 123)"
 }
 
 
