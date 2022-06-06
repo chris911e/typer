@@ -15,10 +15,10 @@ export const x_button = document.querySelector('.x-button')
 export const type_button = document.querySelector(".type-button")
 
 export const option_suffix = document.querySelector(".option-suffix")
+export const mode_option = document.querySelector(".mode-option")
 
-export var str = "";
+export var str = ""
 export var strChars = []
-
 
 export function fillStr(mode, count){
     var prev = ""
@@ -32,7 +32,6 @@ export function fillStr(mode, count){
         }
     }
 }
-
 
 export function renderText(str){
     str.split("").map(letter => {
