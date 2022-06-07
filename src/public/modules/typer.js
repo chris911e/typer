@@ -18,13 +18,15 @@ export const type_button = document.querySelector(".type-button")
 
 export const option_suffix = document.querySelector(".option-suffix")
 export const mode_option = document.querySelector(".mode-option")
+export const mistakes = document.querySelector(".mistakes")
+export const restart_button = document.querySelector(".restart-button")
 
 export var str = ""
 export var strChars = []
 export var time = null
 export var success = null
-export var errors = 0
 export var wpm = 0
+export var accuracy = 100
 
 export function fillStr(mode, count){
     var prev = ""
@@ -51,10 +53,8 @@ export function renderText(str){
 export function resetStrChars(){
     strChars.map(strChar => {
         strChar.classList.remove("correct")
-        strChar.clasList.remove("wrong")
+        strChar.classList.remove("wrong")
     })
-    strChars = []
-    renderText(str)
 }
 
 export function startTyping(){
@@ -66,14 +66,15 @@ export function startTyping(){
             }, time);
         }
         var input_value = input.value
-        var index = input_value.length-1
+        resetStrChars()
+
         input_value.split("").map((letter, i) => {
             if(letter == str[i]){
                 strChars[i].classList.add("correct")
-            }else{
+            } else{
                 strChars[i].classList.add("wrong")
             }
-
+            mistakes.innerText = document.querySelectorAll(".wrong").length
             switch(event.key){
                 case "Backspace":
                     strChars[i+1].classList.remove("wrong")
@@ -87,4 +88,10 @@ export function startTyping(){
             success = true
         }
     })
+}
+
+export function clear() {
+    while(text.firstChild){
+        text.removeChild(text.lastChild)
+    }
 }
