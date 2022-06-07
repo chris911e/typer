@@ -14,7 +14,7 @@ html {
 /* typer */
 
 .stats {
-    /* visibility: hidden; */
+    visibility: hidden;
     float: left;
     height: 32px;
     width: 100%;
@@ -81,7 +81,7 @@ html {
 .wrong{
     text-decoration: underline;
     text-decoration-color: rgba(188, 2, 2, 0.5);
-    color: rgb(250, 132, 132, 0.5);
+    color: rgba(92, 9, 9, 0.9);
 }
 
 /* nav-bar */
