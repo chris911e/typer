@@ -37,6 +37,7 @@ function type() {
             typer.renderText(typer.str)
             break;
     }
+    typer.input.setAttribute("maxlength", typer.str.length-1)
     typer.startTyping()
 
     typer.pop_up.style.visibility = "hidden"
@@ -49,7 +50,7 @@ function type() {
 }
 
 function restart(){
-    typer.str = ""
+    typer.clear()
     type()
 }
 
@@ -90,3 +91,4 @@ window.addEventListener('load', (event) => {
 
 typer.option_button.addEventListener('click', options)
 typer.x_button.addEventListener('click', xfunc)
+typer.restart_button.addEventListener('click', restart)
