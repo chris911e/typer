@@ -22,7 +22,10 @@ function xfunc() {
     typer.input.style.backgroundColor = "rgb(41, 93, 123)"
 }
 
-function type() {
+function typeReady() {
+    if(typer.str.length>0){
+        typer.clear()
+    }
     difficulty = typer.mode_option.value
     amount = parseInt(typer.option_input.value)
     option_mode = typer.option.value
@@ -50,8 +53,7 @@ function type() {
 }
 
 function restart(){
-    typer.clear()
-    type()
+    typeReady()
 }
 
 
@@ -80,13 +82,13 @@ typer.option.addEventListener('change', (event) => {
     }
 })
 
-typer.type_button.addEventListener('click', type)
+typer.type_button.addEventListener('click', typeReady)
 
 window.addEventListener('load', (event) => {
     typer.option.value = "words"
     typer.mode_option.value = "easy"
     typer.option_input.value = 5
-    type()
+    typeReady()
 })
 
 typer.option_button.addEventListener('click', options)
