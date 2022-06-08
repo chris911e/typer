@@ -21,6 +21,8 @@ export const mode_option = document.querySelector(".mode-option")
 export const mistakes = document.querySelector(".mistakes")
 export const restart_button = document.querySelector(".restart-button")
 
+export var scrollCount = 0
+
 export var str = ""
 export var strChars = []
 export var success = null
@@ -29,6 +31,20 @@ export var time = null
 export var wpm = 0
 export var errors = 0
 export var accuracy = 100
+
+export function setScrollCount(difficulty){
+    switch(difficulty){
+        case "easy":
+            scrollCount = 20
+            break
+        case "normal":
+            scrollCount = 13
+            break
+        case "hard":
+            scrollCount = 10
+            break
+    }
+}
 
 export function fillStr(mode, count){
     var prev = ""
@@ -61,6 +77,7 @@ export function resetStrChars(){
 
 export function startTyping(){
     input.addEventListener('keyup', (event) => {
+        input.scrollIntoView()
         var key = event.key
         stats.style.visibility = "visible"
         if(time != null){
