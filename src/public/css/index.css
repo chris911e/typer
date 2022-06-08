@@ -14,17 +14,18 @@ html {
 /* typer */
 
 .stats {
+    margin-bottom: 1vh;
+    font-size: 2.5vh;
     visibility: hidden;
     float: left;
     height: 32px;
     width: 100%;
-    font-size: 1.5em;
-    color: rgb(0, 0, 0, 0.4)
+    color: rgba(153, 218, 190, 0.7);
 }
 
 .text {
     color: rgb(0, 0, 0, 0.5);
-    height: 12vh;
+    height: 125px;
     border: 2px solid rgb(47, 47, 47, 0.6);
     border-radius: 25px;
     font-size: 1.5em;
@@ -33,7 +34,7 @@ html {
 }
 
 .input {
-    height: 9.2vh;
+    height: 125px;
     background-color:rgb(41, 93, 123);
     color: rgb(0, 0, 0, 0.75);
     resize: none;
@@ -76,12 +77,12 @@ html {
 }
 
 .correct{
-    color: rgb(0, 0, 0, 0.9);
+    color: rgba(153, 218, 190, 0.7);
 }
 .wrong{
     text-decoration: underline;
-    text-decoration-color: rgba(188, 2, 2, 0.5);
-    color: rgba(92, 9, 9, 0.9);
+    text-decoration-color: rgba(188, 2, 2);
+    color: rgba(92, 9, 9);
 }
 
 /* nav-bar */
@@ -92,7 +93,7 @@ html {
 
 .nav-bar > li {
     float: right;
-    color: rgb(0, 0, 0, 0.5);
+    color: rgba(153, 218, 190, 0.7);
     font-size: 1.5em;
     display: inline;
     margin: 1em;
