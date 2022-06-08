@@ -23,9 +23,11 @@ export const restart_button = document.querySelector(".restart-button")
 
 export var str = ""
 export var strChars = []
-export var time = null
 export var success = null
+
+export var time = null
 export var wpm = 0
+export var errors = 0
 export var accuracy = 100
 
 export function fillStr(mode, count){
@@ -59,6 +61,7 @@ export function resetStrChars(){
 
 export function startTyping(){
     input.addEventListener('keyup', (event) => {
+        var key = event.key
         stats.style.visibility = "visible"
         if(time != null){
             timer = setTimeout(() => {
@@ -74,14 +77,12 @@ export function startTyping(){
             } else{
                 strChars[i].classList.add("wrong")
             }
-            mistakes.innerText = document.querySelectorAll(".wrong").length
-            switch(event.key){
+            switch(key){
                 case "Backspace":
                     strChars[i+1].classList.remove("wrong")
                     strChars[i+1].classList.remove("correct")
-                case "Enter":
-                    event.preventDefault()
             }
+            mistakes.innerText = document.querySelectorAll(".wrong").length
         })
 
         if(input_value.length == str.length){
@@ -91,7 +92,12 @@ export function startTyping(){
 }
 
 export function clear() {
+    input.value = ""
+    str = ""
+    strChars = []
     while(text.firstChild){
-        text.removeChild(text.lastChild)
+        text.removeChild(text.firstChild)
     }
+    mistakes.innerText = document.querySelectorAll(".wrong").length
+    input.focus()
 }
