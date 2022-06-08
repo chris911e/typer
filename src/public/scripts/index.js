@@ -1,6 +1,6 @@
 import * as typer from '../modules/typer.js'
 
-var difficulty, amount, option_mode
+var difficulty, amount, option_mode, y = 10
 
 function options() {
     typer.pop_up.style.visibility = "visible"
@@ -27,6 +27,8 @@ function typeReady() {
         typer.clear()
     }
     difficulty = typer.mode_option.value
+    typer.setScrollCount(difficulty)
+
     amount = parseInt(typer.option_input.value)
     option_mode = typer.option.value
     switch(option_mode){
@@ -51,11 +53,6 @@ function typeReady() {
     typer.html.style.backgroundColor = "rgb(41, 93, 123)"
     typer.input.style.backgroundColor = "rgb(41, 93, 123)"
 }
-
-function restart(){
-    typeReady()
-}
-
 
 typer.option.addEventListener('change', (event) => {
     if(typer.option.value == "words" || typer.option.value == "time"){
@@ -87,10 +84,18 @@ typer.type_button.addEventListener('click', typeReady)
 window.addEventListener('load', (event) => {
     typer.option.value = "words"
     typer.mode_option.value = "easy"
-    typer.option_input.value = 5
+    typer.option_input.value = 200
     typeReady()
 })
 
+typer.input.addEventListener('scroll', () => {
+    var yHeight = typer.input.scrollTop-y
+    y = typer.input.scrollTop
+    console.log(yHeight)
+    typer.text.scrollBy(0, yHeight)
+})
+
+
 typer.option_button.addEventListener('click', options)
 typer.x_button.addEventListener('click', xfunc)
-typer.restart_button.addEventListener('click', restart)
+typer.restart_button.addEventListener('click', typeReady)
