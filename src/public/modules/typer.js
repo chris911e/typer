@@ -21,30 +21,19 @@ export const mode_option = document.querySelector(".mode-option")
 export const mistakes = document.querySelector(".mistakes")
 export const restart_button = document.querySelector(".restart-button")
 
-export var scrollCount = 0
+export var stats_time = document.querySelector(".time")
 
 export var str = ""
 export var strChars = []
 export var success = null
 
-export var time = null
+export var stopwatch_time = 0
+
 export var wpm = 0
 export var errors = 0
 export var accuracy = 100
 
-export function setScrollCount(difficulty){
-    switch(difficulty){
-        case "easy":
-            scrollCount = 20
-            break
-        case "normal":
-            scrollCount = 13
-            break
-        case "hard":
-            scrollCount = 10
-            break
-    }
-}
+
 
 export function fillStr(mode, count){
     var prev = ""
@@ -75,11 +64,18 @@ export function resetStrChars(){
     })
 }
 
+export function startTimer() {
+    setTimeout(() => {
+        stopwatch_time++
+        timer.value = stopwatch_time
+    },1000)
+}
+
 export function startTyping(){
+    stats.style.visibility = "visible"
     input.addEventListener('keyup', (event) => {
         input.scrollIntoView()
         var key = event.key
-        stats.style.visibility = "visible"
         if(time != null){
             timer = setTimeout(() => {
                 success = false
@@ -112,9 +108,9 @@ export function clear() {
     input.value = ""
     str = ""
     strChars = []
+    stats.style.visibility = "hidden"
     while(text.firstChild){
         text.removeChild(text.firstChild)
     }
     mistakes.innerText = document.querySelectorAll(".wrong").length
-    input.focus()
 }

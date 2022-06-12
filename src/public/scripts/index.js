@@ -23,11 +23,11 @@ function xfunc() {
 }
 
 function typeReady() {
+    typer.input.focus()
     if(typer.str.length>0){
         typer.clear()
     }
     difficulty = typer.mode_option.value
-    typer.setScrollCount(difficulty)
 
     amount = parseInt(typer.option_input.value)
     option_mode = typer.option.value
@@ -91,10 +91,8 @@ window.addEventListener('load', (event) => {
 typer.input.addEventListener('scroll', () => {
     var yHeight = typer.input.scrollTop-y
     y = typer.input.scrollTop
-    console.log(yHeight)
     typer.text.scrollBy(0, yHeight)
 })
-
 
 typer.option_button.addEventListener('click', options)
 typer.x_button.addEventListener('click', xfunc)
