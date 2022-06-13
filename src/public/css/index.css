@@ -162,16 +162,30 @@ html {
     border-radius: 12px;
 }
 
+/* result */
+
+.results {
+    visibility: hidden;
+    position: fixed;
+    padding: 2.5vh;
+    margin-left: 5vh;
+    width: 120vh;
+    height: 60vh;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(36, 91, 123, 0.9);
+}
+
 /* pop up */
 
 .pop-up {
     position: fixed;
-    margin-left: 32vh;
+    height: 10vh;
     width: 69vh;
     border: none;
     border-radius: 5px;
     padding: 25px;
-    background-color: rgb(36, 91, 123);
+    background-color: rgb(36, 91, 123, 0.9);
 
 }
 
