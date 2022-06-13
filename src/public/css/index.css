@@ -135,6 +135,10 @@ html {
     padding-right: 50px;
 }
 
+.highlighthed {
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
 /* option button */
 
 
