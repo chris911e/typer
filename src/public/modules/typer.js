@@ -26,6 +26,8 @@ export const restart_button = document.querySelector(".restart-button")
 export const keyboard = document.querySelector(".keyboard")
 export const results = document.querySelector(".results")
 
+export const current_mode = document.querySelector(".current-mode")
+
 
 export var str = ""
 export var strChars = []
@@ -42,11 +44,6 @@ export var errors = 0
 export var accuracy = 0
 
 export var before = 0
-
-export function setTime(time){
-    this.time = time
-}
-
 
 export function fillStr(mode, count){
     var prev = ""
@@ -77,7 +74,13 @@ export function resetStrChars(){
     })
 }
 
-export function timing() {
+export function finished(){
+    success = true
+    input.blur()
+    location.replace(document.location.href + 'result')
+}
+
+export function timing(input_value) {
     switch(option.value){
         case "words":
             if(!interval){
@@ -87,6 +90,10 @@ export function timing() {
                     all_wpm.push(wpm)
                     stats_wpm.innerText = wpm
                     stats_time.innerText = time
+                    if(input.value.length == str.length-1){
+                        clearInterval(interval)
+                        finished()
+                    }
                 },1100)
             }
             break
@@ -97,9 +104,11 @@ export function timing() {
                 stats_time.innerText = time
                 timer = setTimeout(() => {
                     clearInterval(interval)
-                }, time*1000);
+                    finished()
+                }, time*1100);
 
                 interval = setInterval(() => {
+                    console.log(time)
                     time--
                     time_for_time++
                     wpm = Math.floor((input.value.length/5)/(time_for_time/60))
@@ -111,26 +120,6 @@ export function timing() {
             break
     }
 }
-
-// export async function highlightKey(){
-//     input.value.split("").map(async (letter) => {
-//         for(var i = 0; i < keyboard.children.length; i++){
-//             for(var o = 0; o < keyboard.children[i].children.length; o++){
-
-//                 const key_value = keyboard.children[i].children[o]
-//                 switch(key_value.innerHTML){
-//                     case letter:
-//                         console.log(key_value)
-//                         key_value.classList.add("highlighthed")
-//                         new Promise(r => setTimeout(()=>{
-//                             key_value.classList.remove("highlighthed")
-//                         }, 100))
-//                         break
-//                 }
-//             }
-//         }
-//     })
-// }
 
 export function startTyping(){
     stats.style.visibility = "visible"
@@ -160,13 +149,7 @@ export function startTyping(){
             }
             mistakes.innerText = Math.floor((str.length-errors)/str.length*100)
             timing()
-
         })
-
-        if(input_value.length == str.length){
-            success = true
-
-        }
     })
 }
 
@@ -174,14 +157,13 @@ export function clear() {
     input.value = ""
     str = ""
     strChars = []
-    // stats.style.visibility = "hidden"
     while(text.firstChild){
         text.removeChild(text.firstChild)
     }
     clearInterval(interval)
     interval = null
     timer = null
-    success = null
+    success = false
     errors = 0
     time = 0
     time_for_time = 0
