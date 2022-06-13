@@ -7,6 +7,7 @@ export const typistWrapper = document.querySelector(".typist-wrapper")
 
 export const stats = document.querySelector(".stats")
 export var stats_time = document.querySelector(".time")
+export var stats_wpm = document.querySelector(".wpm")
 
 export const pop_up = document.querySelector(".pop-up")
 export const html = document.getElementsByTagName("html")[0]
@@ -32,6 +33,7 @@ export var time = 0
 export var interval = null
 
 export var wpm = 0
+export var all_wpm = []
 export var errors = 0
 export var accuracy = 0
 
@@ -73,7 +75,10 @@ export function timing() {
             if(!interval){
                 interval = setInterval(() => {
                     time++
+                    wpm = Math.floor((input.value.length/5)/(time/60))
+                    all_wpm.push(wpm)
                     stats_time.innerText = time
+                    stats_wpm.innerText = wpm
                 },1100)
             }
             break
@@ -138,6 +143,9 @@ export function clear() {
     success = null
     errors = 0
     time = 0
+    wpm = 0
+    all_wpm = []
+    stats_wpm.innerText = 0
     stats_time.innerText = 0
     mistakes.innerText = 100
 }
