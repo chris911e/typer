@@ -15,6 +15,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/views/index.html'))
 })
 
+app.get("/result", (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/views/result.html'))
+})
+
 app.listen(process.env.PORT, () => {
     console.log(`Server listening on port ${process.env.PORT}`)
 })
