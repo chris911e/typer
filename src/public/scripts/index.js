@@ -34,7 +34,6 @@ function typeReady() {
     switch(option_mode){
         case "time":
             typer.fillStr(difficulty, amount * 5)
-            typer.time = amount
             typer.renderText(typer.str)
             break;
         case "words":
@@ -82,9 +81,10 @@ typer.option.addEventListener('change', (event) => {
 typer.type_button.addEventListener('click', typeReady)
 
 window.addEventListener('load', (event) => {
-    typer.option.value = "words"
+    typer.option.value = "time"
     typer.mode_option.value = "easy"
     typer.option_input.value = 50
+    // typer.highlightKey()
     typeReady()
 })
 
