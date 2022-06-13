@@ -83,7 +83,7 @@ typer.type_button.addEventListener('click', typeReady)
 window.addEventListener('load', (event) => {
     typer.option.value = "time"
     typer.mode_option.value = "easy"
-    typer.option_input.value = 50
+    typer.option_input.value = 10
     // typer.highlightKey()
     typeReady()
 })
