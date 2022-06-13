@@ -24,6 +24,7 @@ export const mistakes = document.querySelector(".mistakes")
 export const restart_button = document.querySelector(".restart-button")
 
 export const keyboard = document.querySelector(".keyboard")
+export const results = document.querySelector(".results")
 
 
 export var str = ""
@@ -164,6 +165,7 @@ export function startTyping(){
 
         if(input_value.length == str.length){
             success = true
+
         }
     })
 }
