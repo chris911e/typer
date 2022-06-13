@@ -56,7 +56,7 @@ html {
     color: rgb(0, 0, 0, 0.45)
 }
 
-.text, .stats, .keyboard, .pop-up, .restart-button, .input {
+.text, .stats, .keyboard, .pop-up, .restart-button, .input, .current-mode {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -162,26 +162,13 @@ html {
     border-radius: 12px;
 }
 
-/* result */
-
-.results {
-    visibility: hidden;
-    position: fixed;
-    padding: 2.5vh;
-    margin-left: 5vh;
-    width: 120vh;
-    height: 60vh;
-    border: 2px solid black;
-    border-radius: 5px;
-    background-color: rgb(36, 91, 123, 0.9);
-}
-
 /* pop up */
 
 .pop-up {
     position: fixed;
     height: 10vh;
     width: 69vh;
+    margin-left: 16vh;
     border: none;
     border-radius: 5px;
     padding: 25px;
@@ -232,4 +219,10 @@ html {
     font-family: 'Heebo', sans-serif;
     border-radius: 8px;
     border-style: none;
+}
+
+.current-mode {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.2vh;
 }
