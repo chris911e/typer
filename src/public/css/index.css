@@ -15,7 +15,7 @@ html {
 .stats {
     margin-left: 1.5vh;
     margin-bottom: 1vh;
-    font-size: 2.1vh;
+    font-size: 2.5vh;
     visibility: hidden;
     float: left;
     height: 32px;
@@ -25,7 +25,7 @@ html {
 
 .text {
     color: rgb(0, 0, 0, 0.5);
-    height: 125px;
+    height: 10vh;
     border: 2px solid rgb(47, 47, 47, 0.6);
     border-radius: 25px;
     margin-bottom: 25px;
@@ -49,7 +49,7 @@ html {
     overflow-x: hidden;
     overflow: hidden;
     padding: 10px;
-    font-size: 1.3em;
+    font-size: 2.5vh;
 }
 
 .input::placeholder {
@@ -110,15 +110,15 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 19px;
+    font-size: 2vh;
 }
 
 .row-1 > span, .row-2 > span, .row-3 > span, .row-4 > span, .row-5 > span {
     color: rgb(0, 0, 0, 0.75);
     border: 5px solid rgb(0, 0, 0, 0.5);
     border-radius: 5px;
-    padding-left:12px;
-    padding-right: 12px;
+    padding-left:8px;
+    padding-right: 8px;
     margin-left: 2px;
     margin-right: 2px;
     margin-top: 1px;
@@ -146,7 +146,7 @@ html {
     padding: 6px;
     margin-bottom: 2px;
     margin-right: 2vh;
-    font-size: 12px;
+    font-size: 1.4vh;
     font-family: 'Heebo', sans-serif;
     border-radius: 8px;
     transition: 0.3s;
@@ -161,10 +161,9 @@ html {
 /* pop up */
 
 .pop-up {
-    visibility: hidden;
     position: fixed;
-    margin-left: 15vh;
-    width: 36%;
+    margin-left: 32vh;
+    width: 69vh;
     border: none;
     border-radius: 5px;
     padding: 25px;
@@ -172,7 +171,7 @@ html {
 
 }
 
-.type-button, .option-suffix, .mode-option {
+.type-button, .option-suffix, .mode-option, .pop-up {
     visibility: hidden;
 }
 
@@ -211,7 +210,7 @@ html {
     text-align: center;
     color: rgb(0, 0, 0, 0.75);
     background-color: rgb(0, 0, 0, 0.3);
-    font-size: 16px;
+    font-size: 1.69vh;
     font-family: 'Heebo', sans-serif;
     border-radius: 8px;
     border-style: none;
