@@ -81,7 +81,9 @@ export function finished(){
     success = true
     sessionStorage.setItem('success', success)
     sessionStorage.setItem('wpm_data', all_wpm)
+
     sessionStorage.setItem('errors', errors)
+    sessionStorage.setItem('accuracy', mistakes.value)
     input.blur()
     location.replace(document.location.href + 'result')
 
@@ -153,7 +155,8 @@ export function startTyping(){
             if (before < document.querySelectorAll(".wrong").length) {
                 errors++
             }
-            mistakes.innerText = Math.floor((str.length-errors)/str.length*100)
+            accuracy = Math.floor((str.length-errors)/str.length*100)
+            mistakes.innerText = accuracy
             timing()
         })
     })
