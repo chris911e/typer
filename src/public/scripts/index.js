@@ -11,7 +11,6 @@ function options() {
         typer.option_input.value = ""
     }
     typer.pop_up.style.visibility = "visible"
-    // typer.mode_option.value = "nothing"
     typer.option_input.style.visibility = "hidden"
     typer.type_button.style.visibility = "hidden"
     typer.html.style.backgroundColor = "rgb(10, 50, 73)"
@@ -19,6 +18,7 @@ function options() {
 }
 
 function xfunc() {
+    typer.input.focus()
     typer.option_input.value = amount_before
     typer.option.value = option_before
     typer.mode_option.value = mode_before
