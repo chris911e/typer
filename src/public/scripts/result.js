@@ -18,9 +18,16 @@ window.addEventListener('load', () => {
         case "true":
             var errors = parseInt(sessionStorage.getItem('errors'))
             var accuracy = parseInt(sessionStorage.getItem('accuracy'))
-            var amount = parseInt(sessionStorage.getItem('amount'))
+            var time = parseInt(sessionStorage.getItem('time'))
+            var input_length = parseInt(sessionStorage.getItem('input_length'))
             var difficulty = sessionStorage.getItem('difficulty')
             var option_mode = sessionStorage.getItem('option_mode')
+
+            document.getElementById('accuracy').innerText = `${accuracy}%`
+            document.getElementById('mistakes').innerText = errors
+            document.getElementById('chars').innerText = input_length
+            document.getElementById('type').innerText = `${option_mode} | ${difficulty}`
+            document.getElementById('time').innerText = `${time}s`
 
             wpm_data = sessionStorage.getItem('wpm_data').split(',')
             for(var i = 1; i < wpm_data.length+1; i++){
