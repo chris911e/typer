@@ -1,11 +1,17 @@
 import * as typer from '../modules/typer.js'
 
-var difficulty, amount, option_mode, y = 10
+var difficulty, amount, option_mode, y = 10, option_before, amount_before, mode_before
 
 function options() {
+    if(typer.option.value != "nothing"){
+        option_before = typer.option.value
+        amount_before = parseInt(typer.option_input.value)
+        mode_before = typer.mode_option.value
+        typer.option.value = "nothing"
+        typer.option_input.value = ""
+    }
     typer.pop_up.style.visibility = "visible"
-    typer.option.value = "nothing"
-    typer.mode_option.value = "nothing"
+    // typer.mode_option.value = "nothing"
     typer.option_input.style.visibility = "hidden"
     typer.type_button.style.visibility = "hidden"
     typer.html.style.backgroundColor = "rgb(10, 50, 73)"
@@ -13,6 +19,9 @@ function options() {
 }
 
 function xfunc() {
+    typer.option_input.value = amount_before
+    typer.option.value = option_before
+    typer.mode_option.value = mode_before
     typer.pop_up.style.visibility = "hidden"
     typer.option_input.style.visibility = "hidden"
     typer.type_button.style.visibility = "hidden"
