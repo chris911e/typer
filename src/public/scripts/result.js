@@ -2,7 +2,7 @@ import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.j
 import * as typer from '../modules/typer.js'
 
 const result_canvas = document.getElementById('result-chart').getContext('2d')
-var wpm_data = [], label_data = [], loc = document.location.href
+var wpm_data = [], label_data = [], loc = document.location.href, wpm_avg = 0
 
 typer.next_test.addEventListener('click', () => {
     wpm_data = []
@@ -30,9 +30,17 @@ window.addEventListener('load', () => {
             document.getElementById('time').innerText = `${time}s`
 
             wpm_data = sessionStorage.getItem('wpm_data').split(',')
+
+            for(var x = 0; x < wpm_data.length; x++){
+                wpm_avg += parseInt(wpm_data[x])
+            }
+            document.getElementById('wpm').innerText = Math.floor(wpm_avg/wpm_data.length)
+
             for(var i = 1; i < wpm_data.length+1; i++){
                 label_data.push(i)
             }
+            console.log(label_data)
+            console.log(wpm_data.length)
 
             const data = {
                 labels: label_data,
