@@ -19,6 +19,10 @@ app.get("/result", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/views/result.html'))
 })
 
+app.get("/about", (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/views/about.html'))
+})
+
 app.listen(process.env.PORT, () => {
     console.log(`Server listening on port ${process.env.PORT}`)
 })
