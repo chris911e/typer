@@ -9,9 +9,53 @@
     <title>Typist - Result</title>
 </head>
 <body>
+    <div class="typist-wrapper">
+        <ul class="nav-bar">
+            <li><a href="/"><img src="../assets/logo.png" id="logo"></a></li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+
     <div class="result-container">
-        <button class="next-test">> next test</button>
+        <button class="next-test">> retry</button>
         <canvas id="result-chart"></canvas>
+
+        <div class="main-statistics">
+            <div>
+                <div class="stat-title"><b>accuracy:</b></div>
+                <div class="result-stat">NaN</div>
+            </div>
+            <div>
+                <div class="stat-title"><b>avg. wpm:</b></div>
+                <div class="result-stat">NaN</div>
+            </div>
+        </div>
+
+        <div class="secondary-statistics">
+            <div class="single-stat">
+                <div class="single-title"><b>mistakes</b></div>
+                <div>NaN</div>
+            </div>
+            <div class="single-stat">
+                <div class="single-title"><b>errors</b></div>
+                <div>NaN</div>
+            </div>
+            <div class="single-stat">
+                <div class="single-title"><b>chars</b></div>
+                <div>NaN</div>
+            </div>
+            <div class="single-stat">
+                <div class="single-title"><b>test type</b></div>
+                <div>NaN</div>
+            </div>
+            <div class="single-stat">
+                <div class="single-title"><b>time</b></div>
+                <div>NaN</div>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="../scripts/result.js"></script>
