@@ -22,3 +22,12 @@
     top: 95%;
     left: 47%;
 }
+
+#result-chart {
+    background-color: rgb(0, 0, 0, 0.3);
+    float: right;
+    width: 69vh;
+    height: 40vh;
+    border: 2px solid black;
+    border-radius: 5px;
+}
