@@ -227,3 +227,18 @@ html {
     color: rgba(0, 0, 0, 0.5);
     font-size: 1.2vh;
 }
+
+.footer {
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 1vh;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(3, 41, 63, 0.9);
+}
+
+a:hover {
+    color: rgb(1, 18, 28);
+}
