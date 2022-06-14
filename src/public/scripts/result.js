@@ -16,6 +16,12 @@ function createChart(){
 window.addEventListener('load', () => {
     switch(sessionStorage.getItem('success')){
         case "true":
+            var errors = parseInt(sessionStorage.getItem('errors'))
+            var accuracy = parseInt(sessionStorage.getItem('accuracy'))
+            var amount = parseInt(sessionStorage.getItem('amount'))
+            var difficulty = sessionStorage.getItem('difficulty')
+            var option_mode = sessionStorage.getItem('option_mode')
+
             wpm_data = sessionStorage.getItem('wpm_data').split(',')
             for(var i = 1; i < wpm_data.length+1; i++){
                 label_data.push(i)
@@ -25,7 +31,7 @@ window.addEventListener('load', () => {
                 labels: label_data,
                 datasets: [{
                     label: 'WPM',
-                    borderColor: 'rgb(10, 50, 73)',
+                    borderColor: 'rgb(10, 50, 73, 0.5)',
                     data: wpm_data,
                 }]
             };
@@ -34,16 +40,30 @@ window.addEventListener('load', () => {
                 type: 'line',
                 data: data,
                 options: {
+                    maintainAspectRatio: false,
+                    responsive: false,
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'seconds'
+                        }
+                    },
                     y: {
+                        title: {
+                            display: true,
+                            text: 'wpm'
+                        },
+                        min: 0,
+                        max: 300,
                         ticks: {
-                            stepSize: 5
+                            stepSize: 2
                         }
                     }
                 }
             };
 
-            const result_chart = new Chart(result_canvas, config);
-
+            new Chart(result_canvas, config);
+            typer.next_test.focus()
             break
 
         case "false":
