@@ -77,8 +77,10 @@ export function resetStrChars(){
 
 export function finished(){
     success = true
+    sessionStorage.setItem('success', success)
     input.blur()
     location.replace(document.location.href + 'result')
+
 }
 
 export function timing() {
@@ -109,7 +111,6 @@ export function timing() {
                 }, time*1100);
 
                 interval = setInterval(() => {
-                    console.log(time)
                     time--
                     time_for_time++
                     wpm = Math.floor((input.value.length/5)/(time_for_time/60))
