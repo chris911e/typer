@@ -1,11 +1,13 @@
+
 .result-container {
+    background-color: rgb(10, 50, 73, 0.1);
     position: absolute;
     left: 50%;
-    top: 50%;
-    height: 69vh;
+    top: 53%;
+    height: 59vh;
     width: 138vh;
     transform: translate(-50%, -50%);
-    border: 2px solid black;
+    /* border: 2px solid black; */
     border-radius: 2px;
     padding: 10px;
 }
@@ -19,7 +21,7 @@
     border-radius: 8px;
     transition: 0.3s;
     position: absolute;
-    top: 95%;
+    top: 92%;
     left: 47%;
 }
 
@@ -28,6 +30,54 @@
     float: right;
     width: 69vh;
     height: 40vh;
-    border: 2px solid black;
     border-radius: 5px;
+}
+
+.main-statistics {
+    position: absolute;
+    background-color: rgb(10, 50, 73, 0.15);
+    border-radius: 5px;
+    width: 62vh;
+    height: 34.6025vh;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.single-stat {
+    display: inline-block;
+    margin-left: 15.5vh;
+}
+
+.secondary-statistics {
+    position: absolute;
+    top: 60%;
+    background-color: rgb(10, 50, 73, 0.15);
+    border-radius: 5px;
+    margin-top: 3.6vh;
+    height: 10vh;
+    width: 98%;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.single-title {
+    font-size: 2.3vh;
+    color: rgb(0, 0, 0, 0.6);
+}
+
+.single-result {
+    font-size: 1.5vh;
+    color: rgb(255, 255, 255, 0.4);
+}
+
+.stat-title {
+    font-size: 5vh;
+    color: rgb(0, 0, 0, 0.6);
+}
+
+.result-stat {
+    font-size: 3vh;
+    color: rgb(255, 255, 255, 0.4);
 }
