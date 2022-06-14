@@ -168,7 +168,8 @@ html {
     position: fixed;
     height: 10vh;
     width: 69vh;
-    margin-left: 16vh;
+    /* margin-left: 16vh; */
+    left: 32%;
     border: none;
     border-radius: 5px;
     padding: 25px;
