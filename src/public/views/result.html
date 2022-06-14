@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/result.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <title>Typist - Result</title>
-</head>
-<body>
-    <div class="typist-wrapper">
-        <ul class="nav-bar">
-            <li><a href="/"><img src="../assets/logo.png" id="logo"></a></li>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/result.css">
+        <link rel="stylesheet" href="../css/index.css">
+        <title>Typist - Result</title>
+    </head>
+    <body>
+        <div class="typist-wrapper">
+            <ul class="nav-bar">
+                <li><a href="/"><img src="../assets/logo.png" id="logo"></a></li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
 
-    <div class="result-container">
-        <button class="next-test">> retry</button>
-        <canvas id="result-chart"></canvas>
+        <div class="result-container">
+            <button class="next-test">> retry</button>
+            <canvas id="result-chart"></canvas>
 
-        <div class="main-statistics">
-            <div>
-                <div class="stat-title"><b>accuracy:</b></div>
-                <div id="accuracy" class="result-stat">NaN</div>
+            <div class="main-statistics">
+                <div>
+                    <div class="stat-title"><b>accuracy:</b></div>
+                    <div id="accuracy" class="result-stat">NaN</div>
+                </div>
+                <div>
+                    <div class="stat-title"><b>avg. wpm:</b></div>
+                    <div id="wpm" class="result-stat">NaN</div>
+                </div>
             </div>
-            <div>
-                <div class="stat-title"><b>avg. wpm:</b></div>
-                <div id="wpm" class="result-stat">NaN</div>
+
+            <div class="secondary-statistics">
+                <div class="single-stat">
+                    <div class="single-title"><b>mistakes</b></div>
+                    <div id="mistakes" class="single-result" >NaN</div>
+                </div>
+                <div class="single-stat">
+                    <div class="single-title"><b>chars</b></div>
+                    <div id="chars" class="single-result">NaN</div>
+                </div>
+                <div class="single-stat">
+                    <div class="single-title"><b>test type</b></div>
+                    <div id="type" class="single-result">NaN</div>
+                </div>
+                <div class="single-stat">
+                    <div class="single-title"><b>time</b></div>
+                    <div id="time" class="single-result">NaN</div>
+                </div>
             </div>
         </div>
 
-        <div class="secondary-statistics">
-            <div class="single-stat">
-                <div class="single-title"><b>mistakes</b></div>
-                <div id="mistakes" class="single-result" >NaN</div>
-            </div>
-            <div class="single-stat">
-                <div class="single-title"><b>chars</b></div>
-                <div id="chars" class="single-result">NaN</div>
-            </div>
-            <div class="single-stat">
-                <div class="single-title"><b>test type</b></div>
-                <div id="type" class="single-result">NaN</div>
-            </div>
-            <div class="single-stat">
-                <div class="single-title"><b>time</b></div>
-                <div id="time" class="single-result">NaN</div>
-            </div>
-        </div>
-    </div>
-
-    <script type="module" src="../scripts/result.js"></script>
-    <script type="module" src="../modules/typer.js"></script>
-</body>
+        <script type="module" src="../scripts/result.js"></script>
+        <script type="module" src="../modules/typer.js"></script>
+    </body>
+    <footer class="footer">Typist | <a href="https://github.com/chris911e/typer" target="_blank">Repository</a></footer>
 </html>
