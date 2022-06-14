@@ -27,6 +27,7 @@ export const keyboard = document.querySelector(".keyboard")
 export const results = document.querySelector(".results")
 
 export const current_mode = document.querySelector(".current-mode")
+export const next_test = document.querySelector(".next-test")
 
 
 export var str = ""
@@ -80,7 +81,7 @@ export function finished(){
     location.replace(document.location.href + 'result')
 }
 
-export function timing(input_value) {
+export function timing() {
     switch(option.value){
         case "words":
             if(!interval){
