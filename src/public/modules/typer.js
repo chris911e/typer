@@ -60,6 +60,8 @@ export function fillStr(mode, count){
 }
 
 export function renderText(str){
+    success = false
+    sessionStorage.setItem('success', success)
     str.split("").map(letter => {
         const span = document.createElement("span")
         span.innerText = letter
@@ -78,6 +80,8 @@ export function resetStrChars(){
 export function finished(){
     success = true
     sessionStorage.setItem('success', success)
+    sessionStorage.setItem('wpm_data', all_wpm)
+    sessionStorage.setItem('errors', errors)
     input.blur()
     location.replace(document.location.href + 'result')
 
@@ -108,7 +112,7 @@ export function timing() {
                 timer = setTimeout(() => {
                     clearInterval(interval)
                     finished()
-                }, time*1100);
+                }, time*1000);
 
                 interval = setInterval(() => {
                     time--
