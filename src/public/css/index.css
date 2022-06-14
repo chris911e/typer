@@ -156,7 +156,7 @@ html {
     transition: 0.3s;
 }
 
-.option-button:hover, .x-button:hover, .option:hover, .type-button:hover, .restart-button:hover {
+.option-button:hover, .x-button:hover, .option:hover, .type-button:hover, .restart-button:hover, .next-test:hover {
     background-color: rgb(0, 0, 0, 0.5);
     color: rgb(255, 255, 255, 0.5);
     border-radius: 12px;
