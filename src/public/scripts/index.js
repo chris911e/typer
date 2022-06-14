@@ -37,10 +37,14 @@ function typeReady() {
         typer.clear()
     }
     difficulty = typer.mode_option.value
-
     amount = parseInt(typer.option_input.value)
     option_mode = typer.option.value
-    typer.current_mode.innerHTML = `Mode: ${option_mode}`
+
+    typer.current_mode.innerHTML = `Mode: ${option_mode} | Difficulty: ${difficulty}`
+    sessionStorage.setItem('difficulty', difficulty)
+    sessionStorage.setItem('amount', amount)
+    sessionStorage.setItem('option_mode', option_mode)
+
     switch(option_mode){
         case "time":
             typer.fillStr(difficulty, amount * 5)
@@ -91,9 +95,16 @@ typer.option.addEventListener('change', (event) => {
 typer.type_button.addEventListener('click', typeReady)
 
 window.addEventListener('load', (event) => {
-    typer.option.value = "words"
-    typer.mode_option.value = "easy"
-    typer.option_input.value = 10
+    sessionStorage.setItem('success', typer.success)
+    if(sessionStorage.getItem('difficulty') || sessionStorage.getItem('amount') || sessionStorage.getItem('option_mode')){
+        typer.option.value = sessionStorage.getItem('option_mode')
+        typer.mode_option.value = sessionStorage.getItem('difficulty')
+        typer.option_input.value = sessionStorage.getItem('amount')
+    } else {
+        typer.option.value = "time"
+        typer.mode_option.value = "easy"
+        typer.option_input.value = 15
+    }
     typeReady()
 })
 
