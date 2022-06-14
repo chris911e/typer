@@ -42,7 +42,7 @@ export var interval = null
 export var wpm = 0
 export var all_wpm = []
 export var errors = 0
-export var accuracy = 0
+export var accuracy = 100
 
 export var before = 0
 
@@ -83,7 +83,7 @@ export function finished(){
     sessionStorage.setItem('wpm_data', all_wpm)
 
     sessionStorage.setItem('errors', errors)
-    sessionStorage.setItem('accuracy', mistakes.value)
+    sessionStorage.setItem('accuracy', accuracy)
     input.blur()
     location.replace(document.location.href + 'result')
 
@@ -101,6 +101,8 @@ export function timing() {
                     stats_time.innerText = time
                     if(input.value.length == str.length-1){
                         clearInterval(interval)
+                        sessionStorage.setItem('input_length', input.value.length)
+                        sessionStorage.setItem('time', time)
                         finished()
                     }
                 },1100)
@@ -113,6 +115,8 @@ export function timing() {
                 stats_time.innerText = time
                 timer = setTimeout(() => {
                     clearInterval(interval)
+                    sessionStorage.setItem('input_length', input.value.length)
+                    sessionStorage.setItem('time', time_for_time)
                     finished()
                 }, time*1000);
 
@@ -177,6 +181,7 @@ export function clear() {
     time = 0
     time_for_time = 0
     wpm = 0
+    accuracy = 100
     all_wpm = []
     stats_wpm.innerText = 0
     stats_time.innerText = 0
