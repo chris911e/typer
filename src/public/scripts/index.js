@@ -101,9 +101,9 @@ window.addEventListener('load', (event) => {
         typer.mode_option.value = sessionStorage.getItem('difficulty')
         typer.option_input.value = sessionStorage.getItem('amount')
     } else {
-        typer.option.value = "time"
+        typer.option.value = "words"
         typer.mode_option.value = "easy"
-        typer.option_input.value = 15
+        typer.option_input.value = 5
     }
     typeReady()
 })
