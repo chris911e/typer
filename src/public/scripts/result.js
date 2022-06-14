@@ -78,7 +78,6 @@ window.addEventListener('load', () => {
             };
 
             new Chart(result_canvas, config);
-            typer.next_test.focus()
             break
 
         case "false":
