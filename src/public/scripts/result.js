@@ -39,8 +39,6 @@ window.addEventListener('load', () => {
             for(var i = 1; i < wpm_data.length+1; i++){
                 label_data.push(i)
             }
-            console.log(label_data)
-            console.log(wpm_data.length)
 
             const data = {
                 labels: label_data,
@@ -82,7 +80,6 @@ window.addEventListener('load', () => {
 
         case "false":
             location.replace(loc.replace('result', ''))
-            console.log("iufhs")
             break
     }
 })
