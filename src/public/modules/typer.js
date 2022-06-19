@@ -174,6 +174,7 @@ export function clear() {
         text.removeChild(text.firstChild)
     }
     clearInterval(interval)
+    clearTimeout(timer)
     interval = null
     timer = null
     success = false
